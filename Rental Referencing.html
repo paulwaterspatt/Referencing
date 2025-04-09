@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Referencing</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-size: 14px;
+    }
+    .logo {
+      text-align: center;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: black;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      color: #fff;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+    .topnav {
+      background-color: #184e87;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+    }
+    .container {
+      margin-left: 250px;
+    }
+    .breadcrumb p {
+      margin-bottom: 0;
+    }
+    .mainBody {
+      border: 1px solid #dbd7d7;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .btn-primary {
+      background-color: #337ab7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav Bar -->
+  <div class="topnav">
+    <h3>Top Nav</h3>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="htmlauction logo.png" alt="Logo" class="img-fluid">
+    </div>
+    <a href="#">
+      <i class="fas fa-home"></i> Referencing
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="breadcrumb" style="font-size: 12px;">Property > Deposits</div>
+    
+    <h3 class="mt-3">Dashboard</h3>
+    <div class="Welcome">Welcome Paul Waters!</div><br>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">Info</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="referencing-tab" data-bs-toggle="tab" data-bs-target="#referencing" type="button" role="tab">Referencing</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tenants-tab" data-bs-toggle="tab" data-bs-target="#tenants" type="button" role="tab">Tenants</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="leases-tab" data-bs-toggle="tab" data-bs-target="#leases" type="button" role="tab">Leases</button>
+      </li>
+    </ul>
+
+    <div class="tab-content p-3 border border-top-0">
+      <!-- Info Tab -->
+      <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+        <div class="row">
+          <div class="col-md-4 p-2">
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="moveindate" class="form-label">Move in Date</label>
+                    <input type="date" class="form-control" id="moveindate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="lengthoftenancy" class="form-label">Length of Tenancy (months)</label>
+                    <select class="form-select" id="lengthoftenancy">
+                      <option selected disabled>Select months</option>
+                      <!-- Options 1 to 12 -->
+                      ${[...Array(12)].map((_, i) => `<option value="${i+1}">${i+1}</option>`).join('')}
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="enddate" class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="enddate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="rent" class="form-label">Rent</label>
+                    <input type="text" class="form-control" id="rent">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="rentdeposit" class="form-label">Rent Deposit</label>
+                    <input type="text" class="form-control" id="rentdeposit">
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="fullyManaged">
+                    <label class="form-check-label" for="fullyManaged">Is Fully Managed</label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="repositSelected">
+                    <label class="form-check-label" for="repositSelected">Reposit Selected</label>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="referencingComplete">
+                    <label class="form-check-label" for="referencingComplete">Referencing Complete</label>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="valuer" class="form-label">Valuer</label>
+                    <select class="form-select" id="valuer">
+                      <option selected disabled></option>
+                      <option value="1">Paul Waters (Auction Valuation)</option>
+                      <option value="2">Samuel Lightfoot (IT)</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="referencingby" class="form-label">Referencing By</label>
+                    <select class="form-select" id="referencingby">
+                      <option selected disabled></option>
+                      <option value="1">Paul Waters (Auction Valuation)</option>
+                      <option value="2">Samuel Lightfoot (IT)</option>
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="followupdate" class="form-label">Referencing Follow Up Date</label>
+                    <input type="date" class="form-control" id="followupdate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="commissionto" class="form-label">Commission To</label>
+                    <select class="form-select" id="commissionto">
+                      <option selected disabled></option>
+                      <option value="1" selected>Paul Waters (Auction Valuation)</option>
+                      <option value="2">Samuel Lightfoot (IT)</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Column -->
+          <div class="col-md-4 p-2">
+            <div class="card">
+              <div class="card-body">
+                <h6>Bronze (Tenancy Only)</h6>
+                <p><strong>Finders Fee</strong></p>
+                <p>Fee (percent of initial month's rent):</p>
+                  <p>75.00%</p>
+                <p>Minimum Fee (ex VAT):</p>
+                <p>£500.00</p>
+                <br>
+                <p><strong>Monthly Management Fee</strong></p>
+                <p>Monthly Fee (percent of monthly rent): </p>
+                  <p>0%</p>
+                <p>Minimum Monthly Fee (ex VAT): </p>
+                <p>£0</p>
+              </div>
+            </div>
+          </div>
+        <div class="col-md-4 p-2">
+      </div>
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4 p-2">
+          <div class="mb-3">
+            <label for="followupdate" class="form-label">Follow Up Date</label>
+            <input type="date" class="form-control" id="followupdate">
+          </div>
+        </div>
+        <div class="col-md-4 p-2">
+          <form>
+            <div class="mb-3">
+              <label for="commissionto" class="form-label">Follow Up By</label>
+              <select class="form-select" id="commissionto">
+                <option selected disabled></option>
+                <option value="1" selected>Paul Waters (Auction Valuation)</option>
+                <option value="2">Samuel Lightfoot (IT)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4 p-2">
+            <div class="mb-3">
+              <form>
+              <label for="commissionto" class="form-label">Follow Up Team</label>
+              <select class="form-select" id="commissionto">
+                <option selected disabled></option>
+                <option value="1" selected>London Auction</option>
+                <option value="2">South West Auction</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <p>NOTES SECTION</p>
+        </div>
+    </div>
+  </div>
+  </div>
+
+      <!-- Referencing Tab -->
+      <div class="tab-pane fade" id="referencing" role="tabpanel" aria-labelledby="referencing-tab">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+            
+              <!-- Left Column -->
+              <div class="col-md-6 p-3">
+                <div class="mt-4 ms-0 me-auto">
+                  <p style="color: red;">Current screen - no changes</p>
+                  <button type="button" class="btn btn-primary">+ Add Tenant</button><br><br>
+        
+                  <!-- Tenant Card 1 -->
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                      <span>John Doe</span>
+                      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection1" aria-expanded="false" aria-controls="addressSection1">▼</button>
+                    </div>
+                    <div class="collapse" id="addressSection1">
+                      <div class="card-body">
+                        123 Main Street<br>Springfield, IL 62704
+                      </div>
+                    </div>
+                  </div><br>
+        
+                  <!-- Tenant Card 2 -->
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                      <span>John Doe</span>
+                      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection2" aria-expanded="false" aria-controls="addressSection2">▼</button>
+                    </div>
+                    <div class="collapse" id="addressSection2">
+                      <div class="card-body">
+                        123 Main Street<br>Springfield, IL 62704
+                      </div>
+                    </div>
+                  </div><br>
+        
+                  <hr>
+                  <h6>Children Under 18</h6>
+                  <button type="button" class="btn btn-primary">+ Add Child</button><br><br>
+        
+                  <!-- Child Card -->
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center">
+                      <span>John Doe</span>
+                      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection3" aria-expanded="false" aria-controls="addressSection3">▼</button>
+                    </div>
+                    <div class="collapse" id="addressSection3">
+                      <div class="card-body">
+                        123 Main Street<br>Springfield, IL 62704
+                      </div>
+                    </div>
+                  </div><br>
+                </div>
+              </div>
+        
+              <!-- Right Column: Special Conditions -->
+              <div class="col-md-6 p-3">
+                <div class="mb-3">
+                  <label for="special1" class="form-label">Special Condition 1</label>
+                  <textarea class="form-control" id="special1" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="special2" class="form-label">Special Condition 2</label>
+                  <textarea class="form-control" id="special2" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="special3" class="form-label">Special Condition 3</label>
+                  <textarea class="form-control" id="special3" rows="3"></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="special4" class="form-label">Special Condition 4</label>
+                  <textarea class="form-control" id="special4" rows="3"></textarea>
+                </div>
+              </div>
+              <div class="d-flex justify">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+              </div> 
+          </div> 
+        </div> 
+</div>
+      
+      <!-- Tenants Tab -->
+      <div class="tab-pane fade" id="tenants" role="tabpanel" aria-labelledby="tenants-tab">
+        <div class="card">
+          <div class="card-body">
+        <div class="mt-4 ms-0 me-auto" style="max-width: 400px;"> <!-- ms-0 = no left margin, me-auto = push to the left -->
+          <p style="color: red;">Current screen - no changes</p>
+          <button type="button" class="btn btn-primary">+ Add Tenant</button><br><br>
+           <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>John Doe</span>
+              <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection" aria-expanded="false" aria-controls="addressSection">
+                ▼
+              </button>
+            </div>
+            <div class="collapse" id="addressSection">
+              <div class="card-body">
+                123 Main Street<br>
+                Springfield, IL 62704
+              </div>
+            </div>
+          </div><br>
+        </div>
+        </div>
+      </div>
+      </div>
+    <!-- Leases Tab -->
+      <div class="tab-pane fade" id="leases" role="tabpanel" aria-labelledby="leases-tab">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col p-8">
+        <div class="mt-4 ms-0 me-auto" > <!-- ms-0 = no left margin, me-auto = push to the left -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createLeaseModal">
+            + Create Lease
+          </button>
+          <br><br>
+           <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+              <span>John Doe Lease</span>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-primary btn-sm">Download</button>
+                <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection" aria-expanded="false" aria-controls="addressSection">
+                  ▼
+                </button>
+              </div>
+            </div>
+            <div class="collapse" id="addressSection">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col p-6">
+                <p><strong>Rental Package</strong></p>
+                <p>Bronze (Tenancy Only)</p><br>
+                <p><strong>Special Conditions</strong></p>
+                <ul>
+                  <li>Special Condition 1 text</li>
+                  <li>Special Condition 2 text</li>
+                  <li>Special Condition 3 text</li>
+                  <li>Special Condition 4 text</li>
+                </ul>
+                </div>
+                <div class="col p-6">
+                <p><strong>Date Lease Created</strong></p>
+                <p>02/03/2025</p>
+                <p><strong>Created By</strong></p>
+                <p>Charlotte Mason</p>
+                <p><strong>Right To Work date (if applicable)</strong></p>
+                <p>31/12/2026</p>
+              </div>
+            </div>
+          </div><br>
+      </div>
+    </div>
+      <br>
+      
+</div>
+</div>
+<div class="col p-4">
+  <br>
+  
+  <div class="card">
+    <div class="card-body">
+  <p><strong>File</strong></p>
+  <table class="table table-vcenter card-table">
+    <tbody>
+            <tr>
+                <td>Contract</td>
+                <td>15/11/2024 17:05:45</td>
+                <td>
+                    <a href="#" >
+                        OUT_FOR_SIGNATURE
+                    </a>
+                </td>
+                <td>
+                    <span class="btn-group float-end">
+                            <a href="#" class="btn btn-sm">
+                                Signers
+                            </a>
+                        <a class="btn btn-sm">
+                            Download (Partial)
+                        </a>
+                        <button type="button" class="btn btn-danger btn-sm">Download</button>
+                    </span>
+                </td>
+            </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+  </div>
+    </div>
+  </div>
+  </div>
+  <!-- Modal -->
+<div class="modal fade" id="createLeaseModal" tabindex="-1" aria-labelledby="createLeaseModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h5 class="modal-title" id="createLeaseModalLabel">Create Lease</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Modal content goes here -->
+        <p>Select Rent Package</p>
+        <select class="form-select" id="rentPackageSelect" onchange="toggleTextBox()">
+          <option selected disabled>Select a package</option>
+          <option value="fullyManaged">Fully Managed</option>
+          <option value="bronze">Bronze (Tenancy Only)</option>
+        </select>
+        <br>
+        
+        <!-- Text Box to appear when "Fully Managed" is selected -->
+        <div id="textBox" style="display: none;"><br>
+          <label for="additionalInfo">Right To Rent Date <span style="font-size: smaller;">(if applicable)</span></label>
+          <input type="date" class="form-control" id="additionalInfo" required />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Send Lease</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Function to toggle visibility of the text box based on the selection
+  function toggleTextBox() {
+    var selectedValue = document.getElementById("rentPackageSelect").value;
+    var textBox = document.getElementById("textBox");
+
+    if (selectedValue === "fullyManaged") {
+      textBox.style.display = "block"; // Show the text box
+    } else {
+      textBox.style.display = "none"; // Hide the text box
+    }
+  }
+</script>
+
+
+    </div>
+  </div>
+</div>
+    </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
