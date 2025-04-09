@@ -466,9 +466,9 @@
                   </tbody>
               </table>
               </div>
+              </div>
               <div class="d-flex justify">
                 <button type="submit" class="btn btn-primary">Save</button>
-              </div>
               </div>
               </div> 
           </div> 
@@ -633,6 +633,16 @@ const special1 = document.getElementById('special1');
       warning.style.display = 'none';
     }
   });
+  function toggleTextBox() {
+    const select = document.getElementById('rentPackageSelect');
+    const textBox = document.getElementById('textBox');
+
+    if (select.value === 'fullyManaged') {
+      textBox.style.display = 'block';
+    } else {
+      textBox.style.display = 'none';
+    }
+  }
 </script>
 
 
