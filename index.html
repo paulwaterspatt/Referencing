@@ -217,19 +217,43 @@
             <div class="card">
               <div class="card-body">
                 <h6>Landlord Bank Info</h6>
+            
                 <div class="mb-3">
                   <label for="landlordsort" class="form-label">Sort Code</label>
-                  <input type="text" class="form-control" id="landlordsort" placeholder="11-22-33">
+                  <input type="text" class="form-control" id="landlordsort" placeholder="">
                 </div>
+            
                 <div class="mb-3">
                   <label for="landlordaccount" class="form-label">Account Number</label>
-                  <input type="text" class="form-control" id="landlordaccount" placeholder="000123456">
+                  <input type="text" class="form-control" id="landlordaccount" placeholder="">
                 </div>
-                <div class="text-end">
-                <button type="button" class="btn btn-secondary me-2" onclick="unmaskDetails()">Edit</button>
-                <button type="button" class="btn btn-primary" onclick="maskDetails()">Save</button>
+            
+                
+            
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="showExtraFields" onchange="toggleExtraFields()">
+                  <label class="form-check-label" for="showExtraFields">
+                    is Abroad Landlord
+                  </label>
+                </div>
+            
+                <!-- Hidden fields -->
+                <div id="extraFields" class="mt-3" style="display: none;">
+                  <div class="mb-3">
+                    <label for="ibahn" class="form-label">IBAHN</label>
+                    <input type="text" class="form-control" id="ibahn">
+                  </div>
+                  <div class="mb-3">
+                    <label for="bic" class="form-label">BIC / Swift Code</label>
+                    <input type="text" class="form-control" id="bic">
+                  </div>
+                </div>
+                <div class="text-end mb-3">
+                  <button type="button" class="btn btn-secondary me-2" onclick="unmaskDetails()">Edit</button>
+                  <button type="button" class="btn btn-primary" onclick="maskDetails()">Save</button>
+                </div>
               </div>
-            </div>
             </div>
         </div>
           
@@ -963,31 +987,54 @@
 
 
 <script>
+  function toggleExtraFields() {
+    const checkbox = document.getElementById("showExtraFields");
+    const extraFields = document.getElementById("extraFields");
+
+    extraFields.style.display = checkbox.checked ? "block" : "none";
+  }
+
   // Store original values
-  let originalSort = '';
-  let originalAccount = '';
+let originalSort = '';
+let originalAccount = '';
+let originalibahn = '';
+let originalbic = '';
 
-  function maskDetails() {
-    const sortInput = document.getElementById("landlordsort");
-    const accountInput = document.getElementById("landlordaccount");
+function maskDetails() {
+  const sortInput = document.getElementById("landlordsort");
+  const accountInput = document.getElementById("landlordaccount");
+  const ibahnInput = document.getElementById("ibahn");
+  const bicInput = document.getElementById("bic");
+  const extraFields = document.getElementById("extraFields");
 
-    // Save original values
-    originalSort = sortInput.value;
-    originalAccount = accountInput.value;
+  // Save original values
+  originalSort = sortInput.value;
+  originalAccount = accountInput.value;
+  sortInput.value = "*".repeat(originalSort.length);
+  accountInput.value = "*".repeat(originalAccount.length);
 
-    // Replace with asterisks
-    sortInput.value = "*".repeat(originalSort.length);
-    accountInput.value = "*".repeat(originalAccount.length);
+  // Only mask ibahn/bic if visible
+  if (extraFields.style.display !== "none") {
+    originalibahn = ibahnInput.value;
+    originalbic = bicInput.value;
+
+    ibahnInput.value = "*".repeat(originalibahn.length);
+    bicInput.value = "*".repeat(originalbic.length);
   }
+}
 
-  function unmaskDetails() {
-    const sortInput = document.getElementById("landlordsort");
-    const accountInput = document.getElementById("landlordaccount");
+function unmaskDetails() {
+  const sortInput = document.getElementById("landlordsort");
+  const accountInput = document.getElementById("landlordaccount");
+  const ibahnInput = document.getElementById("ibahn");
+  const bicInput = document.getElementById("bic");
 
-    // Restore original values
-    sortInput.value = originalSort;
-    accountInput.value = originalAccount;
-  }
+  // Restore original values
+  sortInput.value = originalSort;
+  accountInput.value = originalAccount;
+  ibahnInput.value = originalibahn;
+  bicInput.value = originalbic;
+}
 
 
  
