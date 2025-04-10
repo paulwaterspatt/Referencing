@@ -320,46 +320,159 @@
             <div class="row">
             
               <!-- Left Column -->
-              <div class="col-md-4 p-3">
+              <div class="col-md-8 p-3">
                 <div class="mt-4 ms-0 me-auto">
-                  <button type="button" class="btn btn-primary">+ Add Tenant</button><br><br>
-                    <!-- Tenant Card 1 -->
+                 <!-- Tenant Card 1 -->
                   <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
                       <span>John Doe</span>
                       <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection1" aria-expanded="false" aria-controls="addressSection1"><span><i class="fa fa-angle-down"></i></span></button>
                     </div>
                     <div class="collapse" id="addressSection1">
-                      <div class="card-body">
-                        8 Redworth Mews, Ashington, Northumberland, NE63 0QF<br>
-                M: 0797651282<br>
-                Email: tester@gmail.com
-                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                         <div class="row">
+                           <div class="col p-4">
+                             <div class="mb-3">
+                               <label for="followupdate" class="form-label">Title</label>
+                               <input type="text" class="form-control" id="followupdate" placeholder="Mr">
+                             </div>
+                             <div class="mb-3">
+                               <label for="email" class="form-label">Email</label>
+                               <input type="text" class="form-control" id="email" placeholder="tester@gmail.com">
+                             </div>
+                         </div><!--colum 1 end-->
+                         <div class="col p-4">
+                           <div class="mb-3">
+                             <label for="Firstnamee" class="form-label">First Name</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="John">
+                           </div>
+                           <div class="mb-3">
+                             <label for="Mobile" class="form-label">Mobile</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="+7987637212">
+                           </div>
+                       </div><!--colum 2 end-->
+                       <div class="col p-4">
+                         <div class="mb-3">
+                           <label for="lastname" class="form-label">Last Name</label>
+                           <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                         </div>
+                         <div class="mb-3">
+                           <label for="telephone" class="form-label">Telephone</label>
+                           <input type="text" class="form-control" id="telephone" placeholder="+191 737 8877">
+                         </div>
+                     </div><!--colum 3 end-->
+                       </div><!--row end-->
+                       <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <label class="form-check-label" for="defaultCheck1">
+                           Manual Referencing Process
+                         </label><br>
+                         </div>
+                         <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#bankInfoSection" aria-expanded="false" aria-controls="bankInfoSection">
+                          Show Bank Info
+                        </button>
+                        <div class="collapse mt-3" id="bankInfoSection">
+                       <h6>Bank Details</h6>
+                       <div class="row">
+                         <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="sortcode" class="form-label">Sort Code</label>
+                         <input type="text" class="form-control" id="sortcode" placeholder="">
+                       </div>
+                     </div>
+                     <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="accountnumber" class="form-label">Account Number</label>
+                         <input type="text" class="form-control" id="accountnumber" placeholder="">
+                       </div>
+                     </div>
+                       </div>
+                     </div><!--row end-->
+                     </div>
+                     </div>
                     </div>
                   </div><br>
         
                   <!-- Tenant Card 2 -->
                   <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
                       <span>John Doe</span>
                       <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection2" aria-expanded="false" aria-controls="addressSection2"><Span><i class="fa fa-angle-down"></i></Span></button>
                     </div>
                     <div class="collapse" id="addressSection2">
-                      <div class="card-body">
-                        8 Redworth Mews, Ashington, Northumberland, NE63 0QF<br>
-                        M: 0797651282<br>
-                        Email: tester@gmail.com
-                      </div>
+                      <div class="card">
+                        <div class="card-body">
+                         <div class="row">
+                           <div class="col p-4">
+                             <div class="mb-3">
+                               <label for="followupdate" class="form-label">Title</label>
+                               <input type="text" class="form-control" id="followupdate" placeholder="Mr">
+                             </div>
+                             <div class="mb-3">
+                               <label for="email" class="form-label">Email</label>
+                               <input type="text" class="form-control" id="email" placeholder="tester@gmail.com">
+                             </div>
+                         </div><!--colum 1 end-->
+                         <div class="col p-4">
+                           <div class="mb-3">
+                             <label for="Firstnamee" class="form-label">First Name</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="John">
+                           </div>
+                           <div class="mb-3">
+                             <label for="Mobile" class="form-label">Mobile</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="+7987637212">
+                           </div>
+                       </div><!--colum 2 end-->
+                       <div class="col p-4">
+                         <div class="mb-3">
+                           <label for="lastname" class="form-label">Last Name</label>
+                           <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                         </div>
+                         <div class="mb-3">
+                           <label for="telephone" class="form-label">Telephone</label>
+                           <input type="text" class="form-control" id="telephone" placeholder="+191 737 8877">
+                         </div>
+                     </div><!--colum 3 end-->
+                       </div><!--row end-->
+                       <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <label class="form-check-label" for="defaultCheck1">
+                           Manual Referencing Process
+                         </label><br>
+                         </div>
+                         <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#bankInfoSection" aria-expanded="false" aria-controls="bankInfoSection">
+                          Show Bank Info
+                        </button>
+                        <div class="collapse mt-3" id="bankInfoSection">
+                       <h6>Bank Details</h6>
+                       <div class="row">
+                         <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="sortcode" class="form-label">Sort Code</label>
+                         <input type="text" class="form-control" id="sortcode" placeholder="">
+                       </div>
+                     </div>
+                     <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="accountnumber" class="form-label">Account Number</label>
+                         <input type="text" class="form-control" id="accountnumber" placeholder="">
+                       </div>
+                     </div>
+                       </div>
+                     </div><!--row end-->
+                     </div>
+                     </div>
                     </div>
                   </div><br>
         
                   <hr>
                   <h6>Children Under 18</h6>
-                  <button type="button" class="btn btn-primary">+ Add Child</button><br><br>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addChildModal">+ Add Child</button><br><br>
         
                   <!-- Child Card -->
                   <div class="card">
-                    <div class="card-header d-flex justify-content-between align-items-center">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
                       <span>John Doe</span>
                       <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection3" aria-expanded="false" aria-controls="addressSection3"><span><i class="fa fa-angle-down"></i></span></button>
                     </div>
@@ -387,30 +500,34 @@
                         </table>
                       </div>
                     </div>
-                  </div><br>
+                    
+                  </div>
+                  <hr>
+                  <!--Special Condition 1-->
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="special1text" class="form-label" >Special Condition 1</label>
+                      <textarea class="form-control" maxlength="200" id="special1" rows="3"></textarea>
+                      <div id="special1-warning" class="text-danger mt-1" style="display:none;">Maximum character limit reached</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="special2" class="form-label">Special Condition 2</label>
+                      <textarea class="form-control" id="special2" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="special3" class="form-label">Special Condition 3</label>
+                      <textarea class="form-control" id="special3" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="special4" class="form-label">Special Condition 4</label>
+                      <textarea class="form-control" id="special4" rows="3"></textarea>
+                    </div>
+                  </div>
                 </div>
+                
               </div>
         
-              <!-- Right Column: Special Conditions -->
-              <div class="col-md-4 p-3">
-                <div class="mb-3">
-                  <label for="special1text" class="form-label" >Special Condition 1</label>
-                  <textarea class="form-control" maxlength="200" id="special1" rows="3"></textarea>
-                  <div id="special1-warning" class="text-danger mt-1" style="display:none;">Maximum character limit reached</div>
-                </div>
-                <div class="mb-3">
-                  <label for="special2" class="form-label">Special Condition 2</label>
-                  <textarea class="form-control" id="special2" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="special3" class="form-label">Special Condition 3</label>
-                  <textarea class="form-control" id="special3" rows="3"></textarea>
-                </div>
-                <div class="mb-3">
-                  <label for="special4" class="form-label">Special Condition 4</label>
-                  <textarea class="form-control" id="special4" rows="3"></textarea>
-                </div>
-              </div>
+              
               <div class="col-md-4 p-3">
                 <div class="mb-3">
                 <table class="table table-vcenter card-table">
@@ -480,10 +597,9 @@
         <div class="card">
           <div class="card-body">
         <div class="mt-4 ms-0 me-auto" style="max-width: 900px;"> <!-- ms-0 = no left margin, me-auto = push to the left -->
-          <p style="color: red;">Current screen - no changes</p>
-          <button type="button" class="btn btn-primary">+ Add Tenant</button><br><br>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTenantModal">+ Add Tenant</button><br><br>
            <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
               <span>John Doe</span>
               <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection" aria-expanded="false" aria-controls="addressSection">
                 <span><i class="fa fa-angle-down"></i></span>
@@ -491,16 +607,74 @@
             </div>
             <div class="collapse" id="addressSection">
               <div class="card-body">
-                8 Redworth Mews, Ashington, Northumberland, NE63 0QF<br>
-                M: 0797651282<br>
-                Email: tester@gmail.com
+                <div class="row">
+                  <div class="col p-4">
+                    <div class="mb-3">
+                      <label for="followupdate" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="followupdate" placeholder="Mr">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="text" class="form-control" id="email" placeholder="tester@gmail.com">
+                    </div>
+                </div><!--colum 1 end-->
+                <div class="col p-4">
+                  <div class="mb-3">
+                    <label for="Firstnamee" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="John">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Mobile" class="form-label">Mobile</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="+447987256162">
+                  </div>
+              </div><!--colum 2 end-->
+              <div class="col p-4">
+                <div class="mb-3">
+                  <label for="lastname" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                </div>
+                <div class="mb-3">
+                  <label for="telephone" class="form-label">Telephone</label>
+                  <input type="text" class="form-control" id="telephone" placeholder="+191 737 8872">
+                </div>
+            </div><!--colum 3 end-->
+              </div><!--row end-->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Manual Referencing Process
+                </label><br>
+                </div>
+                <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#bankInfoSection" aria-expanded="false" aria-controls="bankInfoSection">
+                  Show Bank Info
+                </button><br>
+                <div class="collapse mt-3" id="bankInfoSection">
+               <h6>Bank Details</h6>
+               <div class="row">
+                 <div class="col p-6">
+               <div class="mb-3">
+                 <label for="sortcode" class="form-label">Sort Code</label>
+                 <input type="text" class="form-control" id="sortcode" placeholder="">
+               </div>
+             </div>
+             <div class="col p-6">
+               <div class="mb-3">
+                 <label for="accountnumber" class="form-label">Account Number</label>
+                 <input type="text" class="form-control" id="accountnumber" placeholder="">
+               </div>
+             </div>
+               </div>
+            </div><!--row end--><br>
+            <button type="submit" class="btn btn-primary">Save</button>
+            </div>
               </div>
+              
             </div>
           </div><br>
         </div>
         </div>
       </div>
-      </div>
+      
     <!-- Leases Tab -->
       <div class="tab-pane fade" id="leases" role="tabpanel" aria-labelledby="leases-tab">
         <div class="card">
@@ -513,10 +687,10 @@
           </button>
           <br><br>
            <div class="card">
-            <div class="card-header d-flex justify-content-between align-items-center">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
               <span>John Doe Lease</span>
               <div class="d-flex align-items-center gap-2">
-                <button type="button" class="btn btn-primary btn-sm">Download</button>
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-toggle="tooltip" data-bs-placement="top" title="This will download a PDF of the Lease"  >Download</button>
                 <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection" aria-expanded="false" aria-controls="addressSection">
                   <span><i class="fa fa-angle-down"></i></span>
                 </button>
@@ -541,7 +715,7 @@
                 <p>02/03/2025</p>
                 <p><strong>Created By</strong></p>
                 <p>Charlotte Mason</p>
-                <p><strong>Right To Work date (if applicable)</strong></p>
+                <p><strong>Right To Work Date (if applicable)</strong></p>
                 <p>31/12/2026</p>
               </div>
             </div>
@@ -556,28 +730,16 @@
   <br>
   <div class="card">
     <div class="card-body">
-  <p><strong>File</strong></p>
+  <h6>Adobe Sign Contracts</h6>
   <table class="table table-vcenter card-table">
-    <tbody>
+    <tbody style="font-size: smaller;">
             <tr>
                 <td>Contract</td>
-                <td>15/11/2024 17:05:45</td>
-                <td>
-                    <a href="#" >
-                        OUT_FOR_SIGNATURE
-                    </a>
-                </td>
-                <td>
-                    <span class="btn-group float-end">
-                            <a href="#" class="btn btn-sm">
-                                Signers
-                            </a>
-                        <a class="btn btn-sm">
-                            Download (Partial)
-                        </a>
-                        <button type="button" class="btn btn-danger btn-sm">Download</button>
-                    </span>
-                </td>
+                <td>15/11/2024 </td>
+                <td><a href="#" >OUT_FOR_SIGNATURE</a></td>
+                <td>Signers</td>
+                <td>Download (Partial)</td>
+                <td><button type="button" class="btn btn-danger btn-sm">Download</button></td>
             </tr>
     </tbody>
 </table>
@@ -587,8 +749,9 @@
   </div>
     </div>
   </div>
+  
   </div>
-  <!-- Modal -->
+  <!-- Create Lease Modal -->
 <div class="modal fade" id="createLeaseModal" tabindex="-1" aria-labelledby="createLeaseModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -621,7 +784,125 @@
   </div>
 </div>
 
+<!--Add tenant Modal -->
+<div class="modal fade" id="addTenantModal" tabindex="-1" aria-labelledby="addTenantModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="addTenantModalLabel">Add Tenant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <div class="row">
+          <div class="col p-4">
+            <div class="mb-3">
+              <label for="followupdate" class="form-label">Title</label>
+              <input type="text" class="form-control" id="followupdate" placeholder="">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="">
+            </div>
+        </div><!--colum 1 end-->
+        <div class="col p-4">
+          <div class="mb-3">
+            <label for="Firstnamee" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="Mobile" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="firstname" placeholder="">
+          </div>
+      </div><!--colum 2 end-->
+      <div class="col p-4">
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastname" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="telephone" class="form-label">Telephone</label>
+          <input type="text" class="form-control" id="telephone" placeholder="">
+        </div>
+    </div><!--colum 3 end-->
+      </div><!--row end-->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Manual Referencing Process
+        </label><br>
+        </div>
+        
+      <h6>Bank Details</h6>
+      <div class="row">
+        <div class="col p-6">
+      <div class="mb-3">
+        <label for="sortcode" class="form-label">Sort Code</label>
+        <input type="text" class="form-control" id="sortcode" placeholder="">
+      </div>
+    </div>
+    <div class="col p-6">
+      <div class="mb-3">
+        <label for="accountnumber" class="form-label">Account Number</label>
+        <input type="text" class="form-control" id="accountnumber" placeholder="">
+      </div>
+    </div>
+    </div><!--row end-->
+    </div>
+    </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Child Modal -->
+<div class="modal fade" id="addChildModal" tabindex="-1" aria-labelledby="addChildModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h5 class="modal-title" id="addChildModalLabel">Add Child</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="childName" class="form-label">Child's Name</label>
+            <input type="text" class="form-control" id="childName" placeholder="Enter child's name">
+          </div>
+          <div class="mb-3">
+            <label for="childAge" class="form-label">Age</label>
+            <input type="number" class="form-control" id="childAge" placeholder="Enter age">
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+      
+    </div>
+  </div>
+
+
 <script>
+
+
+<!-- Dummy Download Script -->
+
+    function downloadLease() {
+      alert("Download started!");
+      // window.location.href = "lease.pdf"; // real download logic
+    }
+ 
 
 const special1 = document.getElementById('special1');
   const warning = document.getElementById('special1-warning');
