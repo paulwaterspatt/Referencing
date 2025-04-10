@@ -103,6 +103,9 @@
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="leases-tab" data-bs-toggle="tab" data-bs-target="#leases" type="button" role="tab">Leases</button>
       </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="Files-tab" data-bs-toggle="tab" data-bs-target="#Files" type="button" role="tab">Files</button>
+      </li>
     </ul>
 
     <div class="tab-content p-3 border border-top-0">
@@ -210,8 +213,26 @@
                 <p>Minimum Monthly Fee (ex VAT): </p>
                 <p>£0</p>
               </div>
+            </div><br>
+            <div class="card">
+              <div class="card-body">
+                <h6>Landlord Bank Info</h6>
+                <div class="mb-3">
+                  <label for="landlordsort" class="form-label">Sort Code</label>
+                  <input type="text" class="form-control" id="landlordsort" placeholder="11-22-33">
+                </div>
+                <div class="mb-3">
+                  <label for="landlordaccount" class="form-label">Account Number</label>
+                  <input type="text" class="form-control" id="landlordaccount" placeholder="000123456">
+                </div>
+                <div class="text-end">
+                <button type="button" class="btn btn-secondary me-2" onclick="unmaskDetails()">Edit</button>
+                <button type="button" class="btn btn-primary" onclick="maskDetails()">Save</button>
+              </div>
             </div>
-          </div>
+            </div>
+        </div>
+          
         <div class="col-md-4 p-2">
           <h6>Health checks</h6>
           <table class="table table-vcenter card-table">
@@ -700,6 +721,12 @@
               <div class="card-body">
                 <div class="row">
                   <div class="col p-6">
+                    <p><strong>Tenancy Start</strong></p>
+                    <p>27/02/2025</p>
+                    <p><strong>Tenancy End</strong></p>
+                    <p>27/02/2026</p>
+                    <p><strong>Lease Length</strong></p>
+                    <p>12 Months</p>
                 <p><strong>Rental Package</strong></p>
                 <p>Bronze (Tenancy Only)</p><br>
                 <p><strong>Special Conditions</strong></p>
@@ -711,12 +738,12 @@
                 </ul>
                 </div>
                 <div class="col p-6">
-                <p><strong>Date Lease Created</strong></p>
-                <p>02/03/2025</p>
-                <p><strong>Created By</strong></p>
-                <p>Charlotte Mason</p>
+                  <p><strong>Renewal Start</strong></p>
+                    <p>27/08/2025</p>
+                  <p><strong>Visit Next Due</strong></p>
+                    <p>27/08/2025</p>
                 <p><strong>Right To Work Date (if applicable)</strong></p>
-                <p>31/12/2026</p>
+                  <p>31/12/2026</p>
               </div>
             </div>
           </div><br>
@@ -750,6 +777,47 @@
     </div>
   </div>
   
+  </div>
+  <div class="tab-pane fade" id="Files" role="tabpanel" aria-labelledby="Files-tab">
+    <div class="card">
+      <div class="card-body">
+        <h6 class="mb-4">Files Table</h6>
+  <table class="table table-hover">
+    <thead class="table">
+      <tr>
+        <th scope="col">File</th>
+        <th scope="col">Type</th>
+        <th scope="col">Uploaded By</th>
+        <th scope="col">Uploaded On</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Report_Q1.pdf</td>
+        <td>Lease</td>
+        <td>Alice Walker</td>
+        <td>03/04/2025</td>
+        <td><button type="button" class="btn btn-sm btn-primary">Download</button><button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Itemcheck.pdf</td>
+        <td>Inventory</td>
+        <td>Bob Arkle</td>
+        <td>25/02/2025</td>
+        <td><button type="button" class="btn btn-sm btn-primary">Download</button><button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Presentation.pptx</td>
+        <td>Certificate</td>
+        <td>Bob Arkle</td>
+        <td>25/02/2025</td>
+        <td><button type="button" class="btn btn-sm btn-primary">Download</button><button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+      </div>
+    </div>
   </div>
   <!-- Create Lease Modal -->
 <div class="modal fade" id="createLeaseModal" tabindex="-1" aria-labelledby="createLeaseModalLabel" aria-hidden="true">
@@ -859,6 +927,7 @@
     </div>
     </div>
   </div>
+  
 </div>
 
 <!-- Add Child Modal -->
@@ -894,14 +963,33 @@
 
 
 <script>
+  // Store original values
+  let originalSort = '';
+  let originalAccount = '';
+
+  function maskDetails() {
+    const sortInput = document.getElementById("landlordsort");
+    const accountInput = document.getElementById("landlordaccount");
+
+    // Save original values
+    originalSort = sortInput.value;
+    originalAccount = accountInput.value;
+
+    // Replace with asterisks
+    sortInput.value = "*".repeat(originalSort.length);
+    accountInput.value = "*".repeat(originalAccount.length);
+  }
+
+  function unmaskDetails() {
+    const sortInput = document.getElementById("landlordsort");
+    const accountInput = document.getElementById("landlordaccount");
+
+    // Restore original values
+    sortInput.value = originalSort;
+    accountInput.value = originalAccount;
+  }
 
 
-<!-- Dummy Download Script -->
-
-    function downloadLease() {
-      alert("Download started!");
-      // window.location.href = "lease.pdf"; // real download logic
-    }
  
 
 const special1 = document.getElementById('special1');
