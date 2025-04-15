@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rental Referencing</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+
+  <style>
+    /* Highlight every odd row (excluding header) */
+    tbody tr:nth-child(odd) {
+      background-color: #e2e5e7;
+    }
+    body {
+      font-size: 14px;
+    }
+    .logo {
+      text-align: center;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: black;
+      padding-top: 20px;
+    }
+    .sidebar a {
+      color: #fff;
+      padding: 10px 15px;
+      text-decoration: none;
+      display: block;
+    }
+    .sidebar a:hover {
+      background-color: #575757;
+    }
+    .topnav {
+      background-color: #184e87;
+      color: white;
+      padding: 10px 15px;
+      text-align: center;
+    }
+    .container {
+      margin-left: 250px;
+    }
+    .breadcrumb p {
+      margin-bottom: 0;
+    }
+    .mainBody {
+      border: 1px solid #dbd7d7;
+      padding: 15px;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+    .btn-primary {
+      background-color: #337ab7;
+    }
+    .nav-link {
+    color: inherit !important; /* Inherit from parent, or use a specific color like #000 */
+    text-decoration: none;
+  }
+  </style>
+</head>
+<body>
+
+  <!-- Top Nav Bar -->
+  <div class="topnav">
+    <h3>Top Nav</h3>
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">
+      <img src="htmlauction logo.png" alt="Logo" class="img-fluid">
+    </div>
+    <a href="#">
+      <i class="fas fa-home"></i> Referencing
+    </a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="container mt-4">
+    <div class="breadcrumb" style="font-size: 12px;">Property > Deposits</div>
+    
+    <h3 class="mt-3">Deposits</h3>
+    <br>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="info-tab" data-bs-toggle="tab" data-bs-target="#info" type="button" role="tab">Info</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="referencing-tab" data-bs-toggle="tab" data-bs-target="#referencing" type="button" role="tab">Referencing</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="tenants-tab" data-bs-toggle="tab" data-bs-target="#tenants" type="button" role="tab">Tenants</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="leases-tab" data-bs-toggle="tab" data-bs-target="#leases" type="button" role="tab">Leases</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="Files-tab" data-bs-toggle="tab" data-bs-target="#Files" type="button" role="tab">Files</button>
+      </li>
+    </ul>
+
+    <div class="tab-content p-3 border border-top-0">
+      <!-- Info Tab -->
+      <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+        <div class="row">
+          <div class="col-md-4 p-2">
+            <div class="card">
+              <div class="card-body">
+                <form>
+                  <div class="mb-3">
+                    <label for="moveindate" class="form-label">Move in Date</label>
+                    <input type="date" class="form-control" id="moveindate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="lengthoftenancy" class="form-label">Length of Tenancy (months)</label>
+                    <select class="form-select" id="lengthoftenancy">
+                      <option selected disabled></option>
+                      <option value="1">1</option>`).join('')}
+                      <option value="2">2</option>`).join('')}
+                      <option value="3">3</option>`).join('')}
+                      <option value="4">4</option>`).join('')}
+                      <option value="5">5</option>`).join('')}
+                      <option value="6">6</option>`).join('')}
+                      <option value="7">7</option>`).join('')}
+                      <option value="8">8</option>`).join('')}
+                      <option value="9">9</option>`).join('')}
+                      <option value="10">10</option>`).join('')}
+                      <option value="11">11</option>`).join('')}
+                      <option value="12">12</option>`).join('')}
+                    </select>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="enddate" class="form-label">End Date</label>
+                    <input type="date" class="form-control" id="enddate" readonly style="border: none; box-shadow: none;">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="rent" class="form-label">Rent</label>
+                    <input type="text" class="form-control" id="rent">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="rentdeposit" class="form-label">Rent Deposit</label>
+                    <input type="text" class="form-control" id="rentdeposit">
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="fullyManaged">
+                    <label class="form-check-label" for="fullyManaged">Is Fully Managed</label>
+                  </div>
+
+                  <div class="form-check mb-2">
+                    <input class="form-check-input" type="checkbox" id="repositSelected">
+                    <label class="form-check-label" for="repositSelected">Reposit Selected</label>
+                  </div>
+
+                  <div class="form-check mb-3">
+                    <input class="form-check-input" type="checkbox" id="referencingComplete">
+                    <label class="form-check-label" for="referencingComplete">Referencing Complete</label>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="valuer" class="form-label">Valuer</label>
+                    <input type="search" class="form-control" id="valuer">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="referencingby" class="form-label">Referencing By</label>
+                    <input type="search" class="form-control" id="valuer">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="followupdate" class="form-label">Referencing Follow Up Date</label>
+                    <input type="date" class="form-control" id="followupdate">
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="commissionto" class="form-label">Commission To</label>
+                    <select class="form-select" id="commissionto">
+                      <option selected disabled></option>
+                      <option value="1" selected>Paul Waters (Auction Valuation)</option>
+                      <option value="2">Samuel Lightfoot (IT)</option>
+                    </select>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Second Column -->
+          <div class="col-md-4 p-2">
+            <div class="card">
+              <div class="card-body">
+                <h6>Bronze (Tenancy Only)</h6>
+                <p><strong>Finders Fee</strong></p>
+                <p>Fee (percent of initial month's rent):</p>
+                  <p>75.00%</p>
+                <p>Minimum Fee (ex VAT):</p>
+                <p>£500.00</p>
+                <br>
+                <p><strong>Monthly Management Fee</strong></p>
+                <p>Monthly Fee (percent of monthly rent): </p>
+                  <p>0%</p>
+                <p>Minimum Monthly Fee (ex VAT): </p>
+                <p>£0</p>
+              </div>
+            </div><br>
+            <div class="card">
+              <div class="card-body">
+                <h6>Landlord Bank Info</h6>
+            
+                <div class="mb-3">
+                  <label for="landlordsort" class="form-label">Sort Code</label>
+                  <input type="text" class="form-control" id="landlordsort" placeholder="">
+                </div>
+            
+                <div class="mb-3">
+                  <label for="landlordaccount" class="form-label">Account Number</label>
+                  <input type="text" class="form-control" id="landlordaccount" placeholder="">
+                </div>
+            
+                
+            
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="showExtraFields" onchange="toggleExtraFields()">
+                  <label class="form-check-label" for="showExtraFields">
+                    is Abroad Landlord
+                  </label>
+                </div>
+            
+                <!-- Hidden fields -->
+                <div id="extraFields" class="mt-3" style="display: none;">
+                  <div class="mb-3">
+                    <label for="ibahn" class="form-label">IBAHN</label>
+                    <input type="text" class="form-control" id="ibahn">
+                  </div>
+                  <div class="mb-3">
+                    <label for="bic" class="form-label">BIC / Swift Code</label>
+                    <input type="text" class="form-control" id="bic">
+                  </div>
+                </div>
+                <div class="text-end mb-3">
+                  <button type="button" class="btn btn-secondary me-2" onclick="unmaskDetails()">Edit</button>
+                  <button type="button" class="btn btn-primary" onclick="maskDetails()">Save</button>
+                </div>
+              </div>
+            </div>
+        </div>
+          
+        <div class="col-md-4 p-2">
+          <h6>Health checks</h6>
+          <table class="table table-vcenter card-table">
+            <tbody>
+                <tr class="table-danger">
+                    <td>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td>
+                        All Tenants Reference Check
+                    </td>
+                </tr>
+                <tr class="table-danger">
+                    <td>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td>
+                        Move in date set
+                    </td>
+                </tr>
+                <tr class="table-success">
+                    <td>
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td>
+                        Primary Applicant Pre-check Complete
+                    </td>
+                </tr>
+                <tr class="table-success">
+                    <td>
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td>
+                        All Tenants Pre-check
+                    </td>
+                </tr>
+                <tr class="table-success">
+                    <td>
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td>
+                        All Tenants Terms and Conditions
+                    </td>
+                </tr>
+                <tr class="table-success">
+                    <td>
+                        <i class="fas fa-check"></i>
+                    </td>
+                    <td>
+                        Length of Tenancy set
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+      </div>
+<div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-4 p-2">
+          <div class="mb-3">
+            <label for="followupdate" class="form-label">Follow Up Date</label>
+            <input type="date" class="form-control" id="followupdate">
+          </div>
+        </div>
+        <div class="col-md-4 p-2">
+          <form>
+            <div class="mb-3">
+              <label for="commissionto" class="form-label">Follow Up By</label>
+              <select class="form-select" id="commissionto">
+                <option selected disabled></option>
+                <option value="1" selected>Paul Waters (Auction Valuation)</option>
+                <option value="2">Samuel Lightfoot (IT)</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4 p-2">
+            <div class="mb-3">
+              <form>
+              <label for="commissionto" class="form-label">Follow Up Team</label>
+              <select class="form-select" id="commissionto">
+                <option selected disabled></option>
+                <option value="1" selected>London Auction</option>
+                <option value="2">South West Auction</option>
+              </select>
+            </div>
+          </form>
+        </div>
+        </div>
+        </div>
+      </div>
+      <br>
+      <br>
+      <div class="card">
+        <div class="card-body">
+          <p>NOTES SECTION</p>
+        </div>
+    </div>
+  </div>
+  </div>
+
+      <!-- Referencing Tab -->
+      <div class="tab-pane fade" id="referencing" role="tabpanel" aria-labelledby="referencing-tab">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+            
+              <!-- Left Column -->
+              <div class="col-md-8 p-3">
+                <div class="mt-4 ms-0 me-auto">
+                 <!-- Tenant Card 1 -->
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
+                      <span>John Doe</span>
+                      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection1" aria-expanded="false" aria-controls="addressSection1"><span><i class="fa fa-angle-down"></i></span></button>
+                    </div>
+                    <div class="collapse" id="addressSection1">
+                      <div class="card">
+                        <div class="card-body">
+                         <div class="row">
+                           <div class="col p-4">
+                             <div class="mb-3">
+                               <label for="followupdate" class="form-label">Title</label>
+                               <input type="text" class="form-control" id="followupdate" placeholder="Mr">
+                             </div>
+                             <div class="mb-3">
+                               <label for="email" class="form-label">Email</label>
+                               <input type="text" class="form-control" id="email" placeholder="tester@gmail.com">
+                             </div>
+                         </div><!--colum 1 end-->
+                         <div class="col p-4">
+                           <div class="mb-3">
+                             <label for="Firstnamee" class="form-label">First Name</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="John">
+                           </div>
+                           <div class="mb-3">
+                             <label for="Mobile" class="form-label">Mobile</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="+7987637212">
+                           </div>
+                       </div><!--colum 2 end-->
+                       <div class="col p-4">
+                         <div class="mb-3">
+                           <label for="lastname" class="form-label">Last Name</label>
+                           <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                         </div>
+                         <div class="mb-3">
+                           <label for="telephone" class="form-label">Telephone</label>
+                           <input type="text" class="form-control" id="telephone" placeholder="+191 737 8877">
+                         </div>
+                     </div><!--colum 3 end-->
+                       </div><!--row end-->
+                       <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <label class="form-check-label" for="defaultCheck1">
+                           Manual Referencing Process
+                         </label><br>
+                         </div>
+                         <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#bankInfoSection" aria-expanded="false" aria-controls="bankInfoSection">
+                          Show Bank Info
+                        </button>
+                        <div class="collapse mt-3" id="bankInfoSection">
+                       <h6>Bank Details</h6>
+                       <div class="row">
+                         <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="sortcode" class="form-label">Sort Code</label>
+                         <input type="text" class="form-control" id="sortcode" placeholder="">
+                       </div>
+                     </div>
+                     <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="accountnumber" class="form-label">Account Number</label>
+                         <input type="text" class="form-control" id="accountnumber" placeholder="">
+                       </div>
+                     </div>
+                       </div>
+                     </div><!--row end-->
+                     </div>
+                     </div>
+                    </div>
+                  </div><br>
+        
+                  <!-- Tenant Card 2 -->
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
+                      <span>John Doe</span>
+                      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection2" aria-expanded="false" aria-controls="addressSection2"><Span><i class="fa fa-angle-down"></i></Span></button>
+                    </div>
+                    <div class="collapse" id="addressSection2">
+                      <div class="card">
+                        <div class="card-body">
+                         <div class="row">
+                           <div class="col p-4">
+                             <div class="mb-3">
+                               <label for="followupdate" class="form-label">Title</label>
+                               <input type="text" class="form-control" id="followupdate" placeholder="Mr">
+                             </div>
+                             <div class="mb-3">
+                               <label for="email" class="form-label">Email</label>
+                               <input type="text" class="form-control" id="email" placeholder="tester@gmail.com">
+                             </div>
+                         </div><!--colum 1 end-->
+                         <div class="col p-4">
+                           <div class="mb-3">
+                             <label for="Firstnamee" class="form-label">First Name</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="John">
+                           </div>
+                           <div class="mb-3">
+                             <label for="Mobile" class="form-label">Mobile</label>
+                             <input type="text" class="form-control" id="firstname" placeholder="+7987637212">
+                           </div>
+                       </div><!--colum 2 end-->
+                       <div class="col p-4">
+                         <div class="mb-3">
+                           <label for="lastname" class="form-label">Last Name</label>
+                           <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                         </div>
+                         <div class="mb-3">
+                           <label for="telephone" class="form-label">Telephone</label>
+                           <input type="text" class="form-control" id="telephone" placeholder="+191 737 8877">
+                         </div>
+                     </div><!--colum 3 end-->
+                       </div><!--row end-->
+                       <div class="form-check">
+                         <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                         <label class="form-check-label" for="defaultCheck1">
+                           Manual Referencing Process
+                         </label><br>
+                         </div>
+                         <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#bankInfoSection" aria-expanded="false" aria-controls="bankInfoSection">
+                          Show Bank Info
+                        </button>
+                        <div class="collapse mt-3" id="bankInfoSection">
+                       <h6>Bank Details</h6>
+                       <div class="row">
+                         <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="sortcode" class="form-label">Sort Code</label>
+                         <input type="text" class="form-control" id="sortcode" placeholder="">
+                       </div>
+                     </div>
+                     <div class="col p-6">
+                       <div class="mb-3">
+                         <label for="accountnumber" class="form-label">Account Number</label>
+                         <input type="text" class="form-control" id="accountnumber" placeholder="">
+                       </div>
+                     </div>
+                       </div>
+                     </div><!--row end-->
+                     </div>
+                     </div>
+                    </div>
+                  </div><br>
+        
+                  <hr>
+                  <h6>Children Under 18</h6>
+                  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addChildModal">+ Add Child</button><br><br>
+        
+                  <!-- Child Card -->
+                  <div class="card">
+                    <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
+                      <span>John Doe</span>
+                      <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection3" aria-expanded="false" aria-controls="addressSection3"><span><i class="fa fa-angle-down"></i></span></button>
+                    </div>
+                    <div class="collapse" id="addressSection3">
+                      <div class="card-body">
+                        <table class="table">
+                          <thead class="table">
+                            <tr>
+                              <th>Name</th>
+                              <th>Age</th>
+                              <th></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>John Doe</td>
+                              <td>9</td>
+                              <td><div class="d-flex justify-content-end">
+                                <button class="btn btn-sm btn-primary">Edit</button>
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                              </div></td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                    
+                  </div>
+                  <hr>
+                  <!--Special Condition 1-->
+                  <div class="col-md-12">
+                    <div class="mb-3">
+                      <label for="special1text" class="form-label" >Special Condition 1</label>
+                      <textarea class="form-control" maxlength="200" id="special1" rows="3"></textarea>
+                      <div id="special1-warning" class="text-danger mt-1" style="display:none;">Maximum character limit reached</div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="special2" class="form-label">Special Condition 2</label>
+                      <textarea class="form-control" id="special2" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="special3" class="form-label">Special Condition 3</label>
+                      <textarea class="form-control" id="special3" rows="3"></textarea>
+                    </div>
+                    <div class="mb-3">
+                      <label for="special4" class="form-label">Special Condition 4</label>
+                      <textarea class="form-control" id="special4" rows="3"></textarea>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+        
+              
+              <div class="col-md-4 p-3">
+                <div class="mb-3">
+                <table class="table table-vcenter card-table">
+                  <tbody>
+                      <tr class="table-danger">
+                          <td>
+                              <i class="fas fa-times"></i>
+                          </td>
+                          <td>
+                              All Tenants Reference Check
+                          </td>
+                      </tr>
+                      <tr class="table-danger">
+                          <td>
+                              <i class="fas fa-times"></i>
+                          </td>
+                          <td>
+                              Move in date set
+                          </td>
+                      </tr>
+                      <tr class="table-success">
+                          <td>
+                              <i class="fas fa-check"></i>
+                          </td>
+                          <td>
+                              Primary Applicant Pre-check Complete
+                          </td>
+                      </tr>
+                      <tr class="table-success">
+                          <td>
+                              <i class="fas fa-check"></i>
+                          </td>
+                          <td>
+                              All Tenants Pre-check
+                          </td>
+                      </tr>
+                      <tr class="table-success">
+                          <td>
+                              <i class="fas fa-check"></i>
+                          </td>
+                          <td>
+                              All Tenants Terms and Conditions
+                          </td>
+                      </tr>
+                      <tr class="table-success">
+                          <td>
+                              <i class="fas fa-check"></i>
+                          </td>
+                          <td>
+                              Length of Tenancy set
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+              </div>
+              </div>
+              <div class="d-flex justify">
+                <button type="submit" class="btn btn-primary">Save</button>
+              </div>
+              </div> 
+          </div> 
+        </div> 
+</div>
+      
+      <!-- Tenants Tab -->
+      <div class="tab-pane fade" id="tenants" role="tabpanel" aria-labelledby="tenants-tab">
+        <div class="card">
+          <div class="card-body">
+        <div class="mt-4 ms-0 me-auto" style="max-width: 900px;"> <!-- ms-0 = no left margin, me-auto = push to the left -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTenantModal">+ Add Tenant</button><br><br>
+           <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
+              <span>John Doe</span>
+              <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection" aria-expanded="false" aria-controls="addressSection">
+                <span><i class="fa fa-angle-down"></i></span>
+              </button>
+            </div>
+            <div class="collapse" id="addressSection">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col p-4">
+                    <div class="mb-3">
+                      <label for="followupdate" class="form-label">Title</label>
+                      <input type="text" class="form-control" id="followupdate" placeholder="Mr">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="text" class="form-control" id="email" placeholder="tester@gmail.com">
+                    </div>
+                </div><!--colum 1 end-->
+                <div class="col p-4">
+                  <div class="mb-3">
+                    <label for="Firstnamee" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="John">
+                  </div>
+                  <div class="mb-3">
+                    <label for="Mobile" class="form-label">Mobile</label>
+                    <input type="text" class="form-control" id="firstname" placeholder="+447987256162">
+                  </div>
+              </div><!--colum 2 end-->
+              <div class="col p-4">
+                <div class="mb-3">
+                  <label for="lastname" class="form-label">Last Name</label>
+                  <input type="text" class="form-control" id="lastname" placeholder="Doe">
+                </div>
+                <div class="mb-3">
+                  <label for="telephone" class="form-label">Telephone</label>
+                  <input type="text" class="form-control" id="telephone" placeholder="+191 737 8872">
+                </div>
+            </div><!--colum 3 end-->
+              </div><!--row end-->
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                <label class="form-check-label" for="defaultCheck1">
+                  Manual Referencing Process
+                </label><br>
+                </div>
+                <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#bankInfoSection" aria-expanded="false" aria-controls="bankInfoSection">
+                  Show Bank Info
+                </button><br>
+                <div class="collapse mt-3" id="bankInfoSection">
+               <h6>Bank Details</h6>
+               <div class="row">
+                 <div class="col p-6">
+               <div class="mb-3">
+                 <label for="sortcode" class="form-label">Sort Code</label>
+                 <input type="text" class="form-control" id="sortcode" placeholder="">
+               </div>
+             </div>
+             <div class="col p-6">
+               <div class="mb-3">
+                 <label for="accountnumber" class="form-label">Account Number</label>
+                 <input type="text" class="form-control" id="accountnumber" placeholder="">
+               </div>
+             </div>
+               </div>
+            </div><!--row end--><br>
+            <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+              </div>
+              
+            </div>
+          </div><br>
+        </div>
+        </div>
+      </div>
+      
+    <!-- Leases Tab -->
+      <div class="tab-pane fade" id="leases" role="tabpanel" aria-labelledby="leases-tab">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              <div class="col p-7">
+        <div class="mt-4 ms-0 me-auto" > <!-- ms-0 = no left margin, me-auto = push to the left -->
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#createLeaseModal">
+            + Create Lease
+          </button>
+          <br><br>
+           <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center" style="background-color: #ffffff;">
+              <span>John Doe Lease</span>
+              <div class="d-flex align-items-center gap-2">
+                <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-toggle="modal" data-bs-toggle="tooltip" data-bs-placement="top" title="This will download a PDF of the Lease"  >Download</button>
+                <button class="btn btn-link p-0" type="button" data-bs-toggle="collapse" data-bs-target="#addressSection" aria-expanded="false" aria-controls="addressSection">
+                  <span><i class="fa fa-angle-down"></i></span>
+                </button>
+              </div>
+            </div>
+            <div class="collapse" id="addressSection">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col p-6">
+                    <p><strong>Tenancy Start</strong></p>
+                    <p>27/02/2025</p>
+                    <p><strong>Tenancy End</strong></p>
+                    <p>27/02/2026</p>
+                    <p><strong>Lease Length</strong></p>
+                    <p>12 Months</p>
+                <p><strong>Rental Package</strong></p>
+                <p>Bronze (Tenancy Only)</p><br>
+                <p><strong>Special Conditions</strong></p>
+                <ul>
+                  <li>Special Condition 1 text</li>
+                  <li>Special Condition 2 text</li>
+                  <li>Special Condition 3 text</li>
+                  <li>Special Condition 4 text</li>
+                </ul>
+                </div>
+                <div class="col p-6">
+                  <p><strong>Renewal Start</strong></p>
+                    <p>27/08/2025</p>
+                  <p><strong>Visit Next Due</strong></p>
+                    <p>27/08/2025</p>
+                <p><strong>Right To Work Date (if applicable)</strong></p>
+                  <p>31/12/2026</p>
+              </div>
+            </div>
+          </div><br>
+      </div>
+    </div>
+      <br>
+      
+</div>
+</div>
+<div class="col p-5">
+  <br>
+  <div class="card">
+    <div class="card-body">
+  <h6>Adobe Sign Contracts</h6>
+  <table class="table table-vcenter card-table">
+    <tbody style="font-size: smaller;">
+            <tr>
+                <td>Contract</td>
+                <td>15/11/2024 </td>
+                <td><a href="#" >OUT_FOR_SIGNATURE</a></td>
+                <td>Signers</td>
+                <td>Download (Partial)</td>
+                <td><button type="button" class="btn btn-danger btn-sm">Download</button></td>
+            </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+  </div>
+    </div>
+  </div>
+  
+  </div>
+  <div class="tab-pane fade" id="Files" role="tabpanel" aria-labelledby="Files-tab">
+    <div class="card">
+      <div class="card-body">
+        
+        <button class="btn btn-primary" onclick="document.getElementById('fileInput').click();">
+          + Add Files
+        </button>
+        <input type="file" id="fileInput" style="display: none;" multiple>
+  <table class="table table-hover">
+    <thead class="table">
+      <tr>
+        <th scope="col">File</th>
+        <th scope="col">Type</th>
+        <th scope="col">Uploaded By</th>
+        <th scope="col">Uploaded On</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Report_Q1.pdf</td>
+        <td>Lease</td>
+        <td>Alice Walker</td>
+        <td>03/04/2025</td>
+        <td class="text-end"><button type="button" class="btn btn-sm btn-primary">Download</button><button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Itemcheck.pdf</td>
+        <td>Inventory</td>
+        <td>Bob Arkle</td>
+        <td>25/02/2025</td>
+        <td class="text-end"><button type="button" class="btn btn-sm btn-primary">Download</button><button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+      <tr>
+        <td>Presentation.pptx</td>
+        <td>Certificate</td>
+        <td>Bob Arkle</td>
+        <td>25/02/2025</td>
+        <td class="text-end"><button type="button" class="btn btn-sm btn-primary">Download</button><button type="button" class="btn btn-sm btn-danger">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+      </div>
+    </div>
+  </div>
+  <!-- Create Lease Modal -->
+<div class="modal fade" id="createLeaseModal" tabindex="-1" aria-labelledby="createLeaseModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h5 class="modal-title" id="createLeaseModalLabel">Create Lease</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <!-- Modal content goes here -->
+        <p>Select Rent Package</p>
+        <select class="form-select" id="rentPackageSelect" onchange="toggleTextBox()">
+          <option selected disabled>Select a package</option>
+          <option value="fullyManaged">Fully Managed</option>
+          <option value="bronze">Bronze (Tenancy Only)</option>
+        </select>
+        <br>
+        
+        <!-- Text Box to appear when "Fully Managed" is selected -->
+        <div id="textBox" style="display: none;"><br>
+          <label for="additionalInfo">Right To Rent Date <span style="font-size: smaller;">(if applicable)</span></label>
+          <input type="date" class="form-control" id="additionalInfo" required />
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Send Lease</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Add tenant Modal -->
+<div class="modal fade" id="addTenantModal" tabindex="-1" aria-labelledby="addTenantModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      
+      <div class="modal-header">
+        <h5 class="modal-title" id="addTenantModalLabel">Add Tenant</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="card">
+       <div class="card-body">
+        <div class="row">
+          <div class="col p-4">
+            <div class="mb-3">
+              <label for="followupdate" class="form-label">Title</label>
+              <input type="text" class="form-control" id="followupdate" placeholder="">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="text" class="form-control" id="email" placeholder="">
+            </div>
+        </div><!--colum 1 end-->
+        <div class="col p-4">
+          <div class="mb-3">
+            <label for="Firstnamee" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="firstname" placeholder="">
+          </div>
+          <div class="mb-3">
+            <label for="Mobile" class="form-label">Mobile</label>
+            <input type="text" class="form-control" id="firstname" placeholder="">
+          </div>
+      </div><!--colum 2 end-->
+      <div class="col p-4">
+        <div class="mb-3">
+          <label for="lastname" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="lastname" placeholder="">
+        </div>
+        <div class="mb-3">
+          <label for="telephone" class="form-label">Telephone</label>
+          <input type="text" class="form-control" id="telephone" placeholder="">
+        </div>
+    </div><!--colum 3 end-->
+      </div><!--row end-->
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+        <label class="form-check-label" for="defaultCheck1">
+          Manual Referencing Process
+        </label><br>
+        </div>
+        
+      <h6>Bank Details</h6>
+      <div class="row">
+        <div class="col p-6">
+      <div class="mb-3">
+        <label for="sortcode" class="form-label">Sort Code</label>
+        <input type="text" class="form-control" id="sortcode" placeholder="">
+      </div>
+    </div>
+    <div class="col p-6">
+      <div class="mb-3">
+        <label for="accountnumber" class="form-label">Account Number</label>
+        <input type="text" class="form-control" id="accountnumber" placeholder="">
+      </div>
+    </div>
+    </div><!--row end-->
+    </div>
+    </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+    </div>
+  </div>
+  
+</div>
+
+<!-- Add Child Modal -->
+<div class="modal fade" id="addChildModal" tabindex="-1" aria-labelledby="addChildModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+    
+      <div class="modal-header">
+        <h5 class="modal-title" id="addChildModalLabel">Add Child</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      
+      <div class="modal-body">
+        <form>
+          <div class="mb-3">
+            <label for="childName" class="form-label">Child's Name</label>
+            <input type="text" class="form-control" id="childName" placeholder="Enter child's name">
+          </div>
+          <div class="mb-3">
+            <label for="childAge" class="form-label">Age</label>
+            <input type="number" class="form-control" id="childAge" placeholder="Enter age">
+          </div>
+        </form>
+      </div>
+      
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save</button>
+      </div>
+      
+    </div>
+  </div>
+
+
+<script>
+  function toggleExtraFields() {
+    const checkbox = document.getElementById("showExtraFields");
+    const extraFields = document.getElementById("extraFields");
+
+    extraFields.style.display = checkbox.checked ? "block" : "none";
+  }
+
+  // Store original values
+let originalSort = '';
+let originalAccount = '';
+let originalibahn = '';
+let originalbic = '';
+
+function maskDetails() {
+  const sortInput = document.getElementById("landlordsort");
+  const accountInput = document.getElementById("landlordaccount");
+  const ibahnInput = document.getElementById("ibahn");
+  const bicInput = document.getElementById("bic");
+  const extraFields = document.getElementById("extraFields");
+
+  // Save original values
+  originalSort = sortInput.value;
+  originalAccount = accountInput.value;
+  sortInput.value = "*".repeat(originalSort.length);
+  accountInput.value = "*".repeat(originalAccount.length);
+
+  // Only mask ibahn/bic if visible
+  if (extraFields.style.display !== "none") {
+    originalibahn = ibahnInput.value;
+    originalbic = bicInput.value;
+
+    ibahnInput.value = "*".repeat(originalibahn.length);
+    bicInput.value = "*".repeat(originalbic.length);
+  }
+}
+
+function unmaskDetails() {
+  const sortInput = document.getElementById("landlordsort");
+  const accountInput = document.getElementById("landlordaccount");
+  const ibahnInput = document.getElementById("ibahn");
+  const bicInput = document.getElementById("bic");
+
+  // Restore original values
+  sortInput.value = originalSort;
+  accountInput.value = originalAccount;
+  ibahnInput.value = originalibahn;
+  bicInput.value = originalbic;
+}
+
+
+ 
+
+const special1 = document.getElementById('special1');
+  const warning = document.getElementById('special1-warning');
+
+  special1.addEventListener('input', function () {
+    if (special1.value.length >= special1.maxLength) {
+      warning.style.display = 'block';
+    } else {
+      warning.style.display = 'none';
+    }
+  });
+  function toggleTextBox() {
+    const select = document.getElementById('rentPackageSelect');
+    const textBox = document.getElementById('textBox');
+
+    if (select.value === 'fullyManaged') {
+      textBox.style.display = 'block';
+    } else {
+      textBox.style.display = 'none';
+    }
+  }
+
+  const moveInInput = document.getElementById("moveindate");
+  const lengthInput = document.getElementById("lengthoftenancy");
+  const endDateInput = document.getElementById("enddate");
+
+  function calculateEndDate() {
+    const moveInDate = new Date(moveInInput.value);
+    const length = parseInt(lengthInput.value);
+
+    if (!isNaN(moveInDate) && !isNaN(length)) {
+      const endDate = new Date(moveInDate);
+      endDate.setMonth(endDate.getMonth() + length);
+      endDateInput.value = endDate.toISOString().split('T')[0];
+    }
+  }
+
+  moveInInput.addEventListener("change", calculateEndDate);
+  lengthInput.addEventListener("input", calculateEndDate);
+
+
+</script>
+
+
+    </div>
+  </div>
+</div>
+    </div>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
